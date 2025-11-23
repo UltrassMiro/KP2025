@@ -42,7 +42,7 @@ void ConsoleView::Run() {
 
 void ConsoleView::MainMenu() {
     while (true) {
-        cout << "\n===== Students Library =====\n";
+        cout << "\n     Students Library      \n";
         cout << "1. Users\n";
         cout << "2. Documents\n";
         cout << "3. Loans\n";
@@ -74,7 +74,7 @@ void ConsoleView::MainMenu() {
 
 void ConsoleView::MenuUsers() {
     while (true) {
-        cout << "\n===== Users =====\n";
+        cout << "\n      Users      \n";
         cout << "1. Add user\n";
         cout << "2. Remove user\n";
         cout << "3. Edit user info\n";
@@ -142,7 +142,7 @@ void ConsoleView::ShowUser() {
 void ConsoleView::ListUsers() {
     auto list = userService.GetAll();
 
-    cout << "\n===== User list =====\n";
+    cout << "\n      User list      \n";
     for (auto& u : list) {
         cout << u.GetId() << " | "
              << u.GetFirstName() << " "
@@ -168,7 +168,7 @@ void ConsoleView::SearchUsers() {
 void ConsoleView::SortUsersByFirstName() {
     auto list = userService.SortByFirstName();
 
-    cout << "\n===== Users sorted by FIRST NAME =====\n";
+    cout << "\n      Users sorted by FIRST NAME      \n";
     for (auto& u : list) {
         cout << u.GetFirstName() << " "
              << u.GetLastName() << " | "
@@ -179,7 +179,7 @@ void ConsoleView::SortUsersByFirstName() {
 void ConsoleView::SortUsersByLastName() {
     auto list = userService.SortByLastName();
 
-    cout << "\n===== Users sorted by LAST NAME =====\n";
+    cout << "\n      Users sorted by LAST NAME      \n";
     for (auto& u : list) {
         cout << u.GetLastName() << ", "
              << u.GetFirstName() << " | "
@@ -190,7 +190,7 @@ void ConsoleView::SortUsersByLastName() {
 void ConsoleView::SortUsersByGroup() {
     auto list = userService.SortByGroup();
 
-    cout << "\n===== Users sorted by GROUP =====\n";
+    cout << "\n      Users sorted by GROUP      \n";
     for (auto& u : list) {
         cout << u.GetGroup() << " | "
              << u.GetFirstName() << " "
@@ -203,7 +203,7 @@ void ConsoleView::SortUsersByGroup() {
 
 void ConsoleView::MenuDocuments() {
     while (true) {
-        cout << "\n===== Documents =====\n";
+        cout << "\n      Documents      \n";
         cout << "1. Add document\n";
         cout << "2. Remove document\n";
         cout << "3. Edit document\n";
@@ -270,7 +270,7 @@ void ConsoleView::ShowDocument() {
 
 void ConsoleView::ListDocuments() {
     auto list = docService.GetAll();
-    cout << "\n===== Documents =====\n";
+    cout << "\n      Documents      \n";
 
     for (auto& d : list) {
         cout << d.GetId() << " | "
@@ -306,7 +306,7 @@ void ConsoleView::SortDocumentsByTitle() {
 void ConsoleView::SortDocumentsByAuthor() {
     auto list = docService.SortByAuthor();
 
-    cout << "\n===== Documents sorted by AUTHOR =====\n";
+    cout << "\n      Documents sorted by AUTHOR      \n";
     for (auto& d : list) {
         cout << d.GetAuthor() << " | "
              << d.GetTitle() << " | "
@@ -317,7 +317,7 @@ void ConsoleView::SortDocumentsByAuthor() {
 void ConsoleView::SortDocumentsByYear() {
     auto list = docService.SortByYear();
 
-    cout << "\n===== Documents sorted by YEAR =====\n";
+    cout << "\n      Documents sorted by YEAR      \n";
     for (auto& d : list) {
         cout << d.GetYear() << " | "
              << d.GetTitle() << " | "
@@ -329,7 +329,7 @@ void ConsoleView::SortDocumentsByYear() {
 
 void ConsoleView::MenuLoans() {
     while (true) {
-        cout << "\n===== Loans =====\n";
+        cout << "\n      Loans      \n";
         cout << "1. Loan a document\n";
         cout << "2. Return document\n";
         cout << "3. Search document holder\n";
@@ -381,7 +381,7 @@ void ConsoleView::UserDocuments() {
     string uid = ReadString("User ID: ");
     auto list = loanService.GetDocumentsOfUser(uid);
 
-    cout << "===== Documents loaned to user =====\n";
+    cout << "      Documents loaned to user      \n";
     for (auto& d : list) {
         cout << d.GetId() << " | "
              << d.GetTitle() << " | "
@@ -392,7 +392,7 @@ void ConsoleView::UserDocuments() {
 // GLOBAL SEARCH
 
 void ConsoleView::MenuSearchGeneral() {
-    cout << "\n===== Global search =====\n";
+    cout << "\n      Global search      \n";
     string key = ReadString("Key word: ");
 
     auto docs = docService.FindByTitleSubstring(key);
